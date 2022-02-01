@@ -1,0 +1,5 @@
+name: AdminShop
+version: '${version}'
+main: de.leonheuer.skycave.adminshop.AdminShop
+api-version: 1.18
+authors: [ Hakuyamu ]
