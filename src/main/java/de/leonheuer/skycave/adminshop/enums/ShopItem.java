@@ -40,14 +40,32 @@ public enum ShopItem {
     PRISMARINE_BRICKS(Material.PRISMARINE_BRICKS, "Prismarinziegel", 1, 270, true, ItemCategory.STONE),
     DARK_PRISMARINE(Material.DARK_PRISMARINE, "Dunkler Prismarin", 1, 250, true, ItemCategory.STONE),
     SEA_LANTERN(Material.SEA_LANTERN, "Seelaterne", 1, 370, true, ItemCategory.STONE),
+    CALCITE(Material.CALCITE, "Kalzit", 1, 25, true, ItemCategory.STONE),
+    TUFF(Material.TUFF, "Tuffstein", 1, 20, true, ItemCategory.STONE),
+    DEEPSLATE(Material.DEEPSLATE, "Tiefenschiefer", 1, 30, true, ItemCategory.STONE),
+    COBBLED_DEEPSLATE(Material.COBBLED_DEEPSLATE, "Bruchtiefenschiefer", 1, 40, true, ItemCategory.STONE),
+    POLISHED_DEEPSLATE(Material.POLISHED_DEEPSLATE, "Polierter Tiefenschiefer", 1, 40, true, ItemCategory.STONE),
+    DEEPSLATE_COAL_ORE(Material.DEEPSLATE_COAL_ORE, "Tiefenschiefer-Steinkohle", 1, 50, true, ItemCategory.STONE),
+    DEEPSLATE_IRON_ORE(Material.DEEPSLATE_IRON_ORE, "Tiefenschiefer-Eisenerz", 1, 60, true, ItemCategory.STONE),
+    DEEPSLATE_GOLD_ORE(Material.DEEPSLATE_GOLD_ORE, "Tiefenschiefer-Golderz", 1, 70, true, ItemCategory.STONE),
+    DEEPSLATE_DIAMOND_ORE(Material.DEEPSLATE_DIAMOND_ORE, "Tiefenschiefer-Diamanterz", 1, 300, true, ItemCategory.STONE),
+    DEEPSLATE_COPPER_ORE(Material.DEEPSLATE_COPPER_ORE, "Tiefenschiefer-Kupfererz", 1, 150, true, ItemCategory.STONE),
+    DEEPSLATE_REDSTONE_ORE(Material.DEEPSLATE_REDSTONE_ORE, "Tiefenschiefer-Redstone-Erz", 1, 70, true, ItemCategory.STONE),
+    COPPER_BLOCK(Material.COPPER_BLOCK, "Kupferblock", 1, 150, true, ItemCategory.STONE),
+    DRIPSTONE_BLOCK(Material.DRIPSTONE_BLOCK, "Tropfsteinblock", 1, 200, true, ItemCategory.STONE),
+    AMETHYST_SHARD(Material.AMETHYST_SHARD, "Amethystscherbe", 1, 150, true, ItemCategory.STONE),
+
 
     // miscellaneous items
     DIRT(Material.DIRT, "Erde", 1, 90, true, ItemCategory.MISC),
     GRASS(Material.GRASS_BLOCK, "Gras", 1, 100, true, ItemCategory.MISC),
+    MOSS_BLOCK(Material.MOSS_BLOCK, "Moos", 1, 100, true, ItemCategory.MISC),
     SAND(Material.SAND, "Sand", 1, 120, true, ItemCategory.MISC),
     GRAVEL(Material.GRAVEL, "Kies", 1, 15, true, ItemCategory.MISC),
     LAVA(Material.LAVA_BUCKET, "Lava Eimer", 1, 120, false, ItemCategory.MISC),
     REDSTONE(Material.REDSTONE, "Redstone", 64, 600, false, ItemCategory.MISC),
+    POWDER_SNOW(Material.POWDER_SNOW, "Puderschnee", 1, 30, true, ItemCategory.MISC),
+    RAW_GOLD_BLOCK(Material.RAW_GOLD_BLOCK, "Rohgoldblock", 1, 100, true, ItemCategory.STONE),
 
     // spawn egg items
     CHICKEN(Material.CHICKEN_SPAWN_EGG, "Huhn Spawnei", 1, 10000, true, ItemCategory.SPAWNEGG),

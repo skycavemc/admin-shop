@@ -29,11 +29,11 @@ public class ShopUtils {
     private static final AdminShop main = JavaPlugin.getPlugin(AdminShop.class);
 
     public static void openAdminShop(Player player, @Nullable ItemCategory category) {
-        Inventory inv = Bukkit.getServer().createInventory(player, 27, Component.text("&6✪ &4Admin Shop"));
+        Inventory inv = Bukkit.getServer().createInventory(player, 45, Component.text("&6✪ &4Admin Shop"));
 
         // if no category given, assume category overview is wanted
         if (category == null) {
-            int slot = 11;
+            int slot = 20;
             for (ItemCategory cat : ItemCategory.values()) {
                 inv.setItem(slot, new ItemBuilder(cat.getMat(), 1)
                         .name("&6" + cat.getTitle())
@@ -59,7 +59,7 @@ public class ShopUtils {
                         .getResult());
                 slot++;
             }
-            inv.setItem(26, BACK_DOOR);
+            inv.setItem(44, BACK_DOOR);
             player.openInventory(inv);
             return;
         }
@@ -90,29 +90,29 @@ public class ShopUtils {
         }
 
         if (main.stackItems.contains(player)) {
-            inv.setItem(22, new ItemBuilder(Material.LIME_DYE, 1)
+            inv.setItem(40, new ItemBuilder(Material.LIME_DYE, 1)
                     .name("&e" + category.getTitle() + " x64")
                     .description(Message.GUI_ITEMS_X64.getFormatted())
                     .getResult());
         } else {
-            inv.setItem(22, new ItemBuilder(Material.GRAY_DYE, 1)
+            inv.setItem(40, new ItemBuilder(Material.GRAY_DYE, 1)
                     .name("&e" + category.getTitle())
                     .description(Message.GUI_ITEMS_X1.getFormatted())
                     .getResult());
         }
-        inv.setItem(26, BACK_DOOR);
+        inv.setItem(44, BACK_DOOR);
         player.openInventory(inv);
     }
 
     public static void placeholders(Inventory inv) {
-        for (int i = 18; i < 27; i++) {
+        for (int i = 36; i < 45; i++) {
             inv.setItem(i, PLACEHOLDER);
         }
     }
 
     public static boolean hasSpace(Inventory inv) {
         int free = 0;
-        for (int i = 0; i < 36; i++) {
+        for (int i = 0; i < inv.getSize(); i++) {
             if (inv.getItem(i) == null) {
                 free++;
             }
