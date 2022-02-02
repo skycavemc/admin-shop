@@ -97,7 +97,7 @@ public class ShopUtils {
                     .getResult());
         } else {
             inv.setItem(40, new ItemBuilder(Material.GRAY_DYE, 1)
-                    .name("&e" + category.getTitle())
+                    .name("&e" + category.getTitle() + " x1")
                     .description(GUIMessage.GUI_ITEMS_X1.getStrings())
                     .getResult());
         }
