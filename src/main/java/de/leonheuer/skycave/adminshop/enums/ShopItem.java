@@ -42,6 +42,7 @@ public enum ShopItem {
     SEA_LANTERN(Material.SEA_LANTERN, "Seelaterne", 1, 370, true, ItemCategory.STONE),
     CALCITE(Material.CALCITE, "Kalzit", 1, 25, true, ItemCategory.STONE),
     TUFF(Material.TUFF, "Tuffstein", 1, 20, true, ItemCategory.STONE),
+    DRIPSTONE_BLOCK(Material.DRIPSTONE_BLOCK, "Tropfsteinblock", 1, 200, true, ItemCategory.STONE),
     DEEPSLATE(Material.DEEPSLATE, "Tiefenschiefer", 1, 30, true, ItemCategory.STONE),
     COBBLED_DEEPSLATE(Material.COBBLED_DEEPSLATE, "Bruchtiefenschiefer", 1, 40, true, ItemCategory.STONE),
     POLISHED_DEEPSLATE(Material.POLISHED_DEEPSLATE, "Polierter Tiefenschiefer", 1, 40, true, ItemCategory.STONE),
@@ -51,10 +52,6 @@ public enum ShopItem {
     DEEPSLATE_DIAMOND_ORE(Material.DEEPSLATE_DIAMOND_ORE, "Tiefenschiefer-Diamanterz", 1, 300, true, ItemCategory.STONE),
     DEEPSLATE_COPPER_ORE(Material.DEEPSLATE_COPPER_ORE, "Tiefenschiefer-Kupfererz", 1, 150, true, ItemCategory.STONE),
     DEEPSLATE_REDSTONE_ORE(Material.DEEPSLATE_REDSTONE_ORE, "Tiefenschiefer-Redstone-Erz", 1, 70, true, ItemCategory.STONE),
-    COPPER_BLOCK(Material.COPPER_BLOCK, "Kupferblock", 1, 150, true, ItemCategory.STONE),
-    DRIPSTONE_BLOCK(Material.DRIPSTONE_BLOCK, "Tropfsteinblock", 1, 200, true, ItemCategory.STONE),
-    AMETHYST_SHARD(Material.AMETHYST_SHARD, "Amethystscherbe", 1, 150, true, ItemCategory.STONE),
-
 
     // miscellaneous items
     DIRT(Material.DIRT, "Erde", 1, 90, true, ItemCategory.MISC),
@@ -64,8 +61,17 @@ public enum ShopItem {
     GRAVEL(Material.GRAVEL, "Kies", 1, 15, true, ItemCategory.MISC),
     LAVA(Material.LAVA_BUCKET, "Lava Eimer", 1, 120, false, ItemCategory.MISC),
     REDSTONE(Material.REDSTONE, "Redstone", 64, 600, false, ItemCategory.MISC),
-    POWDER_SNOW(Material.POWDER_SNOW, "Puderschnee", 1, 30, true, ItemCategory.MISC),
-    RAW_GOLD_BLOCK(Material.RAW_GOLD_BLOCK, "Rohgoldblock", 1, 100, true, ItemCategory.STONE),
+    POWDER_SNOW_BUCKET(Material.POWDER_SNOW_BUCKET, "Pulverschneeeimer", 1, 30, true, ItemCategory.MISC),
+    COPPER_BLOCK(Material.COPPER_BLOCK, "Kupferblock", 1, 150, true, ItemCategory.MISC),
+    EXPOSED_COPPER(Material.EXPOSED_COPPER, "Angelaufener Kupferblock", 1, 200, true, ItemCategory.MISC),
+    WEATHERED_COPPER(Material.WEATHERED_COPPER, "Verwitterter Kupferblock", 1, 250, true, ItemCategory.MISC),
+    OXIDIZED_COPPER(Material.OXIDIZED_COPPER, "Oxidierter Kupferblock", 1, 300, true, ItemCategory.MISC),
+    AMETHYST_SHARD(Material.AMETHYST_SHARD, "Amethystscherbe", 1, 150, true, ItemCategory.MISC),
+    AMETHYST_BLOCK(Material.AMETHYST_BLOCK, "Amethystblock", 1, 600, true, ItemCategory.MISC),
+    SMALL_AMETHYST_BUD(Material.SMALL_AMETHYST_BUD, "Kleine Amethystknospe", 1, 100, true, ItemCategory.MISC),
+    MEDIUM_AMETHYST_BUD(Material.MEDIUM_AMETHYST_BUD, "Mittlere Amethystknospe", 1, 200, true, ItemCategory.MISC),
+    LARGE_AMETHYST_BUD(Material.LARGE_AMETHYST_BUD, "Große Amethystknospe", 1, 300, true, ItemCategory.MISC),
+    AMETHYST_CLUSTER(Material.AMETHYST_CLUSTER, " Amethysthaufen", 1, 600, true, ItemCategory.MISC),
 
     // spawn egg items
     CHICKEN(Material.CHICKEN_SPAWN_EGG, "Huhn Spawnei", 1, 10000, true, ItemCategory.SPAWNEGG),

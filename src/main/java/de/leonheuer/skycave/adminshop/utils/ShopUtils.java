@@ -29,7 +29,7 @@ public class ShopUtils {
     private static final AdminShop main = JavaPlugin.getPlugin(AdminShop.class);
 
     public static void openAdminShop(Player player, @Nullable ItemCategory category) {
-        Inventory inv = Bukkit.getServer().createInventory(player, 45, Component.text("&6✪ &4Admin Shop"));
+        Inventory inv = Bukkit.getServer().createInventory(player, 45, Component.text("§6✪ §4Admin Shop"));
 
         // if no category given, assume category overview is wanted
         if (category == null) {

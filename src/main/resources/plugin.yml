@@ -3,3 +3,10 @@ version: '${version}'
 main: de.leonheuer.skycave.adminshop.AdminShop
 api-version: 1.18
 authors: [ Hakuyamu ]
+depend: [ Vault ]
+
+commands:
+  setadminshop:
+    permission: skybee.adminshop.command.set
+  shop:
+    description: shop command
