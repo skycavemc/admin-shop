@@ -44,7 +44,7 @@ public class PlayerInteractListener implements Listener {
 
         try {
             Location location = config.getObject("npc_location", Location.class);
-            if (location == entity.getLocation()) {
+            if (location != null && location.distance(entity.getLocation()) < .5) {
                 player.playSound(player.getLocation(), Sound.ENTITY_PIGLIN_ADMIRING_ITEM, 1.0F, 1.0F);
                 ShopUtils.openAdminShop(player, null);
             }
