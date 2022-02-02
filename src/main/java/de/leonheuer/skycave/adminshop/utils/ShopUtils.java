@@ -1,10 +1,7 @@
 package de.leonheuer.skycave.adminshop.utils;
 
 import de.leonheuer.skycave.adminshop.AdminShop;
-import de.leonheuer.skycave.adminshop.enums.ItemCategory;
-import de.leonheuer.skycave.adminshop.enums.Message;
-import de.leonheuer.skycave.adminshop.enums.ShopItem;
-import de.leonheuer.skycave.adminshop.enums.ShopSpawner;
+import de.leonheuer.skycave.adminshop.enums.*;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -35,10 +32,11 @@ public class ShopUtils {
         if (category == null) {
             int slot = 20;
             for (ItemCategory cat : ItemCategory.values()) {
+                String[] lore = GUIMessage.GUI_CATEGORY_DESCRIPTION.getStrings();
+                lore = ArrayUtils.replaceAll(lore, "%title", cat.getTitle());
                 inv.setItem(slot, new ItemBuilder(cat.getMat(), 1)
                         .name("&6" + cat.getTitle())
-                        .description(Message.GUI_CATEGORY_DESCRIPTION.getFormatted()
-                                .replaceAll("%title", cat.getTitle()))
+                        .description(lore)
                         .getResult());
                 slot++;
             }
@@ -51,11 +49,12 @@ public class ShopUtils {
             int slot = 0;
             placeholders(inv);
             for (ShopSpawner spawner : ShopSpawner.values()) {
+                String[] lore = GUIMessage.GUI_ITEM_DESCRIPTION.getStrings();
+                lore = ArrayUtils.replaceAll(lore, "%amount", "1");
+                lore = ArrayUtils.replaceAll(lore, "%price", nf.format(spawner.getPrice()));
                 inv.setItem(slot, new ItemBuilder(Material.SPAWNER, 1)
                         .name("&b" + spawner.getName() + " Spawner")
-                        .description(Message.GUI_ITEM_DESCRIPTION.getFormatted()
-                                .replaceAll("%amount", "1")
-                                .replaceAll("%price", nf.format(spawner.getPrice())))
+                        .description(lore)
                         .getResult());
                 slot++;
             }
@@ -71,18 +70,20 @@ public class ShopUtils {
             if (item.getCategory() == category) {
                 if (main.stackItems.contains(player) && item.isStackAllowed()) {
                     String calculatedPrice = nf.format((long) item.getPrice() * item.getStackSize());
+                    String[] lore = GUIMessage.GUI_ITEM_DESCRIPTION.getStrings();
+                    lore = ArrayUtils.replaceAll(lore, "%amount", "" + item.getStackSize());
+                    lore = ArrayUtils.replaceAll(lore, "%price", calculatedPrice);
                     inv.setItem(slot, new ItemBuilder(item.getMat(), item.getStackSize())
                             .name("&e" + item.getName())
-                            .description(Message.GUI_ITEM_DESCRIPTION.getFormatted()
-                                    .replaceAll("%amount", "" + item.getStackSize())
-                                    .replaceAll("%price", calculatedPrice))
+                            .description(lore)
                             .getResult());
                 } else {
+                    String[] lore = GUIMessage.GUI_ITEM_DESCRIPTION.getStrings();
+                    lore = ArrayUtils.replaceAll(lore, "%amount", "" + item.getAmount());
+                    lore = ArrayUtils.replaceAll(lore, "%price", nf.format(item.getPrice()));
                     inv.setItem(slot, new ItemBuilder(item.getMat(), item.getAmount())
                             .name("&e" + item.getName())
-                            .description(Message.GUI_ITEM_DESCRIPTION.getFormatted()
-                                    .replaceAll("%amount", "" + item.getAmount())
-                                    .replaceAll("%price", nf.format(item.getPrice())))
+                            .description(lore)
                             .getResult());
                 }
                 slot++;
@@ -92,12 +93,12 @@ public class ShopUtils {
         if (main.stackItems.contains(player)) {
             inv.setItem(40, new ItemBuilder(Material.LIME_DYE, 1)
                     .name("&e" + category.getTitle() + " x64")
-                    .description(Message.GUI_ITEMS_X64.getFormatted())
+                    .description(GUIMessage.GUI_ITEMS_X64.getStrings())
                     .getResult());
         } else {
             inv.setItem(40, new ItemBuilder(Material.GRAY_DYE, 1)
                     .name("&e" + category.getTitle())
-                    .description(Message.GUI_ITEMS_X1.getFormatted())
+                    .description(GUIMessage.GUI_ITEMS_X1.getStrings())
                     .getResult());
         }
         inv.setItem(44, BACK_DOOR);

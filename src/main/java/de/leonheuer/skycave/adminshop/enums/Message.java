@@ -5,12 +5,6 @@ import org.bukkit.ChatColor;
 public enum Message {
 
     PREFIX("&8&l| &eSky&6Bee &8» "),
-    
-    // GUI messages
-    GUI_CATEGORY_DESCRIPTION("&7Hier klicken, um dir%nl%&e%title &7zu kaufen."),
-    GUI_ITEM_DESCRIPTION("&7Anzahl: &6%amount%nl%&7Preis: &6%price$%nl%&eKlicke zum kaufen"),
-    GUI_ITEMS_X64("&7Klicke um Anzahl der Items%nl%&7auf &a1 &7zu ändern"),
-    GUI_ITEMS_X1("&7Klicke um Anzahl der Items%nl%&7auf &a64 &7zu ändern"),
 
     // Buy messages
     BUY_SPAWNER_SUCCESS("&7Du hast einen &a%type Spawner &7für &e%cost$ &7erworben."),
