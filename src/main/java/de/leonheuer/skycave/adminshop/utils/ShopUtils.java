@@ -11,6 +11,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.text.NumberFormat;
@@ -111,9 +112,9 @@ public class ShopUtils {
         }
     }
 
-    public static boolean hasSpace(Inventory inv) {
+    private static boolean hasSpace(@NotNull Inventory inv) {
         int free = 0;
-        for (int i = 0; i < inv.getSize(); i++) {
+        for (int i = 0; i < 36; i++) {
             if (inv.getItem(i) == null) {
                 free++;
             }
@@ -121,9 +122,9 @@ public class ShopUtils {
         return free > 0;
     }
 
-    public static void buySpawner(Player player, ShopSpawner spawner) {
+    public static void buySpawner(@NotNull Player player, @NotNull ShopSpawner spawner) {
         OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(player.getUniqueId());
-        Inventory inv = player.getInventory();
+        Inventory inv = player.getOpenInventory().getBottomInventory();
 
         if (main.getEcon().getBalance(offlinePlayer) >= (double) spawner.getPrice()) {
             if (hasSpace(inv)) {
@@ -140,7 +141,6 @@ public class ShopUtils {
                         spawner.getPrice() + "$");
             } else {
                 player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0F, 1.0F);
-                player.closeInventory();
                 player.sendMessage(Message.BUY_NOSPACE.getMessage());
             }
         } else {
@@ -154,9 +154,9 @@ public class ShopUtils {
         }
     }
 
-    public static void buyItem(Player player, ShopItem item) {
+    public static void buyItem(@NotNull Player player, @NotNull ShopItem item) {
         OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(player.getUniqueId());
-        Inventory inv = player.getInventory();
+        Inventory inv = player.getOpenInventory().getBottomInventory();
 
         int price = item.getPrice();
         int amount = item.getAmount();
@@ -175,11 +175,10 @@ public class ShopUtils {
                 player.sendMessage(Message.BUY_ITEM_SUCCESS.getMessage()
                         .replaceAll("%type", name)
                         .replaceAll("%cost", nf.format(price)));
-                player.getInventory().addItem(new ItemStack(item.getMat(), amount));
+                inv.addItem(new ItemStack(item.getMat(), amount));
                 main.getLogger().info(player.getName() + " has bought " + name + " for " + price + "$");
             } else {
                 player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0F, 1.0F);
-                player.closeInventory();
                 player.sendMessage(Message.BUY_NOSPACE.getMessage());
             }
         } else {
